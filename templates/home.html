@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">My AI Tools</h2>
+<div class="row g-4">
+  {% if assigned_apps %}
+    {% for app in assigned_apps %}
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="{{ app['icon'] or 'fas fa-robot' }} fa-3x text-primary mb-3"></i>
+            <h5 class="card-title">{{ app['name'] }}</h5>
+            <p class="card-text text-muted">{{ app['description'] }}</p>
+            <a href="{{ url_for('main.tool_runner', slug=app['slug']) }}" class="btn btn-primary">
+              <i class="fas fa-play-circle"></i> Launch
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No tools assigned yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

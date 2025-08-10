@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create New Tool</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label>Name</label>
+    <input name="name" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Slug</label>
+    <input name="slug" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Description</label>
+    <input name="description" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Icon (FontAwesome)</label>
+    <input name="icon" class="form-control" placeholder="fas fa-robot">
+  </div>
+  <div class="mb-3">
+    <label>Template File (HTML)</label>
+    <input name="template_file" class="form-control" placeholder="slug.html">
+  </div>
+  <div class="mb-3">
+    <label>Backend Function</label>
+    <input name="backend_function" class="form-control">
+  </div>
+  <button class="btn btn-primary">Create</button>
+</form>
+{% endblock %}

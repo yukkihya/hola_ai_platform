@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Hot Deploy New Tool</h2>
+<form method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label>Slug</label>
+    <input name="slug" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Backend Function</label>
+    <input name="backend_function" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Backend Python File (.py)</label>
+    <input type="file" name="py_file" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>HTML Template File (.html)</label>
+    <input type="file" name="html_file" class="form-control">
+  </div>
+  <button class="btn btn-success">Upload & Deploy</button>
+</form>
+{% endblock %}
