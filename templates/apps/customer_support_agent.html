@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Customer Support Agent (AI-Powered)</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label>Your Question</label>
+    <textarea name="user_query" class="form-control" placeholder="Ask anything about our product..."></textarea>
+  </div>
+  <button class="btn btn-primary">Ask</button>
+</form>
+{% if support_response %}
+<hr>
+<pre>{{ support_response }}</pre>
+{% endif %}
+{% endblock %}
